@@ -45,11 +45,11 @@ function ordenarA (arreglo){
                     arreglo[i][j]=arreglo[i][j+1];
                     arreglo[i][j+1]=cont;
                 }
-                var cont2 = arreglo[i][j];
+                /*var cont2 = arreglo[i][j];
                 if(arreglo[i][j] < arreglo[i+1][j]){    
                     arreglo[i][j]=arreglo[i+1][j];
                     arreglo[i+1][j]=cont2;
-                }
+                }*/
             }
         }
     }
