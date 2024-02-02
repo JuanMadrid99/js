@@ -98,9 +98,9 @@
   //**Explicación:** Define métodos en un objeto de manera abreviada utilizando la sintaxis de método.
   
 /* ### 16. **`Object.freeze`:** */
-  Object.freeze(person);
+  Object.freeze(person); 
   person.age = 31; // No tiene efecto, ya que el objeto está congelado.
-  //**Explicación:** Congela un objeto, impidiendo que se añadan, modifiquen o eliminen sus propiedades.
+  //**Explicación:** Congela un objeto, impidiendo que se añadan, modifiquen o eliminen sus propiedades. solo estás congelando el objeto en el nivel más externo, lo que significa que las propiedades que son objetos anidados dentro del objeto principal no se congelarán automáticamente.
   
 /* ### 17. **`Object.seal`:** */
   Object.seal(person);
