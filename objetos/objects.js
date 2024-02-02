@@ -19,6 +19,10 @@ Aquí tienes una detallada explicación de los objetos en JavaScript y sus utili
   otroObjeto.clave2 = valor2;
   // ...
 
+  // 3. **objetos mas consiso:**
+  const crearPersona = (name, age ,idioma) => ({nombre : name,edad : age , idioma})
+  console.log(crearPersona("Juan",23,"Ingles")); //Output: { nombre: 'Juan', edad: 23, idioma: 'Ingles' }
+
 /* ### Acceso a Propiedades: */
   console.log(miObjeto.clave1); // Acceso mediante notación de punto
   console.log(miObjeto["clave2"]); // Acceso mediante notación de corchetes
