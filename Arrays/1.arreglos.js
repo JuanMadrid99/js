@@ -94,4 +94,10 @@ let allEven = numbersEVERY.every(function(number) {
 });
 console.log(allEven);// Output: true
 
+//16. `**Find**`: Devuelve el primer elemento que cumple una condición específica.
+let numbersFIND = [2, 4, 6, 8];
+const mayorQueTres = numbersFIND.find(function(numbers) {
+	return numbers > 3;
+	});
+console.log(mayorQueTres);// Output: 4
 
