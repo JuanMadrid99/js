@@ -8,19 +8,14 @@ const usuario = {
         pelicula: "sci-fi"
     }
 }
-const {edad,nombre,apellido} = usuario;
-console.log(edad);
+const {edad,nombre,apellido} = usuario; //Queda con el mismo nombre de como se fue asignado
+console.log(edad,nombre,apellido); //Output: 23 juan madrid
 
 const {"gustos generales": {musica: generoMusical, pelicula}} = usuario;
-console.log(generoMusical);
-// console.log(typeof(apellido));
-
-
-// console.log(GustosMusica, GustosPeliculas);
-
+console.log(generoMusical); //Output: indie
 
 // con funcion flecha 
 const datos = ({nombre,edad}) => { 
-    console.log(nombre, edad);
+    return `${nombre} con ${edad}`;
 }
-datos(usuario);
+console.log(datos(usuario)); //Output: juan con 23
