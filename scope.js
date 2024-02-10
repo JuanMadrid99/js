@@ -48,3 +48,61 @@ Comprender el scope es fundamental para escribir código JavaScript eficiente y 
 	closure(); // Output: 50
 	//La función interna `interna()` forma un cierre y tiene acceso a la variable `exteriorVar` de su ámbito externo (`externa()`).
 	//Los closures son una poderosa herramienta para crear funciones que encapsulan comportamientos y datos.
+///////////////////////////////////////////////////////////////////////////
+/* 6. **Scope Encadenado (Nested Scope):** */
+	//Se refiere a la capacidad de una función interna de acceder a las variables de su función externa.
+	function externa() {
+		const exteriorVar = 60;
+		function interna() {
+			console.log(exteriorVar); // interna tiene acceso a exteriorVar de su función externa
+		}
+		interna();
+	}
+	externa(); // Output: 60
+	//Aquí, la función `interna()` tiene acceso a la variable `exteriorVar` de su función externa `externa()`.
+
+/* 7. **Scope Lexical (También conocido como Static Scope):** */
+	//Se refiere a cómo se resuelve el scope en tiempo de compilación, basado en la estructura física del código.
+	const exteriorVar = 70;
+	function externa() {
+		const exteriorVar = 80;
+		function interna() {
+			console.log(exteriorVar); // interna tiene acceso a exteriorVar de su función externa (no al scope global)
+		}
+		interna();
+	}
+	externa(); // Output: 80
+	//En este ejemplo, la función `interna()` accede a la variable `exteriorVar` de su función externa `externa()`, no al `exteriorVar` del scope global.
+
+/* 8. **Shadowing:** */
+	//Ocurre cuando una variable local en un ámbito interno tiene el mismo nombre que una variable en un ámbito externo, lo que oculta la variable externa dentro del ámbito interno.
+	const variable = 'Exterior';
+	function funcion() {
+		const variable = 'Interior';
+		console.log(variable); // variable se refiere a la variable local en este ámbito
+	}
+	funcion(); // Output: 'Interior'
+
+/* 9. **IIFE (Immediately Invoked Function Expression):** */
+	//Una expresión de función invocada inmediatamente que se ejecuta inmediatamente después de ser definida.
+	(function() {
+		const iifeVar = 90;
+		console.log(iifeVar); // Output: 90
+	})();
+	//Las variables declaradas dentro de un IIFE tienen un scope local y no afectan al scope global.
+
+/* 10. **Uso de `var`, `let` y `const` para definir variables:** */
+	//`var`: Tiene scope de función.
+	//`let`: Tiene scope de bloque.
+	//`const`: También tiene scope de bloque y no se puede reasignar.
+	function ejemplo() {
+		if (true) {
+			var varVar = 100;
+			let letVar = 110;
+			const constVar = 120;
+		}
+		console.log(varVar); // Output: 100
+		//console.log(letVar); // Error: letVar no está definida fuera del bloque
+		//console.log(constVar); // Error: constVar no está definida fuera del bloque
+	}
+	ejemplo();
